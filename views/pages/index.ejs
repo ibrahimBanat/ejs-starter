@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+  </head>
+  <body>
+    <header>
+      <a href="/summary">All Countries</a>
+    </header>
+    <%= console.log(total) %>
+    <div>Total cases confirmed: <span><%= total.TotalConfirmed %></span></div>
+    <div>Total deathes: <span><%= total.TotalDeaths %></span></div>
+    <div>Total recovered: <span><%= total.TotalRecovered %></span></div>
+
+    <section>
+      <form action="/getCountryResult" method="get">
+        <input type="text" name="city" />
+        <button>Search</button>
+      </form>
+    </section>
+  </body>
+</html>

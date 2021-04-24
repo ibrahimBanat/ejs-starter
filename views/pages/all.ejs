@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cases</title>
+  </head>
+  <body>
+    <main>
+      <% allData.forEach((result)=> {%>
+      <div>
+        <h2><%= result.country %></h2>
+        <h4>Total Confirmed Cases:<%= result.confirmed %></h4>
+        <h4>Total Deaths Cases:<%= result.deaths %></h4>
+        <h4>Total recovered cases:<%= result.recovered %></h4>
+        <p>Date:<%= result.date %></p>
+
+        <form action="/addRecored" method="POST">
+          <input
+            required
+            type="hidden"
+            name="country"
+            value="<%= result.country %>"
+          />
+          <input
+            required
+            type="hidden"
+            name="confirmed"
+            value="<%= result.confirmed %>"
+          />
+          <input
+            required
+            type="hidden"
+            name="deaths"
+            value="<%= result.deaths %>"
+          />
+          <input
+            required
+            type="hidden"
+            name="recovered"
+            value="<%= result.recovered %>"
+          />
+          <input
+            required
+            type="hidden"
+            name="date"
+            value="<%= result.date %>"
+          />
+          <button>Add to my records</button>
+        </form>
+      </div>
+      <% }) %>
+    </main>
+  </body>
+</html>
